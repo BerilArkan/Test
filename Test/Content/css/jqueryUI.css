@@ -1,0 +1,30 @@
+﻿body.dragging, body.dragging * {
+    cursor: move !important;
+}
+
+.dragged {
+    position: absolute;
+    opacity: 0.5;
+    z-index: 2000;
+}
+
+ol.selectedList li.placeholder {
+    position: relative;
+    /** More li styles **/
+}
+
+    ol.selectedList li.placeholder:before {
+        position: absolute;
+        /** Define arrowhead **/
+    }
+
+.boxdesign {
+    background-color: white;
+    width: 100px;
+    border: 5px solid lightblue;
+    padding: 29px;
+  
+}
+/*.hover {
+    background-color: yellow;
+}*/

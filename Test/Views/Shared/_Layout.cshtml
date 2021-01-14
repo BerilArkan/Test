@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/simple-line-icons.min.css" rel="stylesheet" />
+
+    <link href="~/Content/css/sweetalert2.css" rel="stylesheet" />
+    <link href="~/Content/css/flag-icon.min.css" rel="stylesheet" />
+    <link href="~/Content/js/js/datatables/datatables.css" rel="stylesheet" />
+    <link href="~/Content/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.multiselect.css" rel="stylesheet" />
+    @*@RenderSection("Styles", required: false)*@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    @*@Scripts.Render("~/Content/js/js/jquery.min.js")
+    @Scripts.Render("~/Content/js/js/bootstrap.min.js")
+    @Scripts.Render("~/Content/js/js/sweetalert2.js")
+    @Scripts.Render("~/Content/js/js/main.js")
+    @Scripts.Render("~/Content/js/js/datatables/datatables.js")
+    @Scripts.Render("~/Content/js/js/datatables/dataTables.buttons.min.js")
+    @Scripts.Render("~/Content/js/js/datatables/buttons.html5.min.js")
+    @Scripts.Render("~/Content/js/js/datatables/select.min.js")
+    @Scripts.Render("~/Content/js/js/datatables/jszip.min.js")
+    @Scripts.Render("~/Content/js/js/select2.min.js")*@
+ 
+    <script src="~/Content/js/js/jquery.min.js"></script>
+    <script src="~/Content/js/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/js/sweetalert2.js"></script>
+    <script src="~/Content/js/js/main.js"></script>
+    <script src="~/Content/js/js/datatables/datatables.js"></script>
+    <script src="~/Content/js/js/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Content/js/js/datatables/buttons.html5.min.js"></script>
+    <script src="~/Content/js/js/datatables/select.min.js"></script>
+    <script src="~/Content/js/js/datatables/jszip.min.js"></script>
+    <script src="~/Content/js/js/select2.min.js"></script>
+    @RenderSection("script", required: false)
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+ 
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-user"></i>
+            <strong><span data-translate="_hesapAyarları">Kategori Bilgisi Ekle</span></strong>
+        </div>
+        <div class="card-body">
+            <form id="form" action="" method="post" class="form-horizontal"> 
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="col-form-label">Kategori</label>
+                        <input type="text" id="productCategory" name="productCategory" class="form-control" placeholder="Kategoriyi Giriniz">
+                    </div>
+                </div> 
+            </form>             
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <button type="submit" onclick="fnSaveCategory()" class="btn btn-primary pull-right">
+                        <i class="fa fa-save"></i> Kaydet
+                    </button>
+                </div>
+            </div>
+            <div class="modal fade" id="productCategoryInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-md modal-primary" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header" id="pushDetail">
+                            <h5 class="modal-title" id="companyDetails">Ürün Bilgileri </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="form-group col-md-8">
+                                        <label class="col-form-label">Kategori</label>
+                                        <input type="text" id="categoryField" name="categoryField" class="form-control" placeholder="Kategori" readonly="readonly">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-8">
+                                        <label class="col-form-label">Ürün Adı</label>
+                                        <input type="text" id="productField" name="productField" class="form-control" placeholder="Ürün Adı" required>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" onclick="fnUpdateProductInfo()" data-dismiss="modal">Güncelle</button>
+                            <button type="submit" class="btn btn btn-danger" onclick="fnDeleteProduct()" data-dismiss="modal">Ürünü Sil</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <strong>Ürün Bilgisi Ekle</strong>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label class="col-form-label">Kategoriler</label>
+                    <select class="form-control" id="chooseCategory" name="chooseCategory"></select>
+                </div>
+                 
+                    <div class="form-group col-md-6">
+                        <label class="col-form-label">Ürünler</label>
+                        <input type="text" id="addProductName" name="addProductName" class="form-control" placeholder="Ürün Adı Giriniz">
+                    </div>               
+                <div class="form-group col-md-3" style="margin-top: 34px !important;">
+                    <button id="addProductButtonId" type="submit" class="btn btn-primary"
+                            onclick="fnSaveProduct()">
+                        Ekle
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            <strong><span data-translate="_şifreDeğişikliği">Ürün & Kategori Liste</span></strong>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <table id="authorizedList" class="table table-responsive-md" data-page-length="5"></table>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+</div>
+
+@section script{
+    <script>
+        $(document).ready(function ($) {           
+             fnGetSavedKategoryList()
+        });
+        fnCategoryListDropDown("chooseCategory");
+       
+    </script>
+}
